@@ -1,0 +1,308 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.project-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.project-buttons button {
+    padding: 15px;
+    background: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.project-buttons button:hover {
+    background: #3367d6;
+}
+
+.project-view {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.back-button {
+    display: block;
+    margin: 25px auto 0;
+    padding: 12px 25px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.notas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.notas-container input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.botoes-metodos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.botoes-metodos button {
+    padding: 10px;
+    background: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#saida {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: monospace;
+    min-height: 50px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-salvar {
+    background: linear-gradient(to right, #3498db, #2ecc71) !important;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    flex: 1;
+}
+
+.btn-limpar {
+    background: #f1c40f !important;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    flex: 1;
+}
+
+.icon {
+    margin-right: 8px;
+}
+
+/* Estilos da Calculadora */
+.calculadora-box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.input-with-button {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.input-with-button input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.btn-confirmar {
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-confirmar:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.notas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.nota-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.nota-item label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.nota-item input {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.nota-item input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.botoes-acao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.btn-calcular, .btn-limpar {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.btn-calcular {
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+.btn-limpar {
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+.btn-calcular:hover, .btn-limpar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.resultado-box {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.5s;
+    margin-top: 20px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.resultado-box.aprovado, .resultado-box.reprovado {
+    opacity: 1;
+    height: auto;
+    padding: 30px 20px;
+}
+
+.aprovado {
+    background: linear-gradient(135deg, #e0f7e9, #c8f0d9);
+    border-left: 5px solid #2ecc71;
+}
+
+.reprovado {
+    background: linear-gradient(135deg, #fde0e0, #f9caca);
+    border-left: 5px solid #e74c3c;
+}
+
+.media-valor {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.media-status {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.media-mensagem {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.custom-alert {
+    position: relative;
+    padding: 15px;
+    background: #ff6b6b;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: slideIn 0.3s, fadeOut 0.5s 2.5s;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
