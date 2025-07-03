@@ -1,143 +1,126 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
     padding: 20px;
     margin: 0;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 50px auto;
     text-align: center;
+    perspective: 1000px;
+}
+
+.container h1 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.container h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #4a7dff, #8e54e9);
+    border-radius: 2px;
 }
 
 .project-buttons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
 }
 
 .project-buttons button {
-    padding: 15px;
-    background: #4285f4;
+    padding: 20px 15px;
+    background: linear-gradient(145deg, #4a7dff, #3a6de8);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(58, 109, 232, 0.3);
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    letter-spacing: 0.5px;
+}
+
+.project-buttons button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(30deg);
+    transition: all 0.6s ease;
 }
 
 .project-buttons button:hover {
-    background: #3367d6;
+    transform: translateY(-5px) translateZ(10px);
+    box-shadow: 0 12px 25px rgba(58, 109, 232, 0.4);
+}
+
+.project-buttons button:hover::after {
+    transform: rotate(30deg) translate(20%, 20%);
 }
 
 .project-view {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: fadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .back-button {
-    display: block;
-    margin: 25px auto 0;
-    padding: 12px 25px;
-    background: #ff6b6b;
+    display: inline-flex;
+    align-items: center;
+    margin: 30px auto 0;
+    padding: 14px 30px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: white;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    font-weight: bold;
-}
-
-.notas-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.notas-container input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.botoes-metodos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.botoes-metodos button {
-    padding: 10px;
-    background: #9b59b6;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#saida {
-    background: #f0f0f0;
-    padding: 15px;
-    border-radius: 5px;
-    font-family: monospace;
-    min-height: 50px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
     font-weight: 600;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     font-size: 16px;
+    box-shadow: 0 5px 15px rgba(254, 180, 123, 0.4);
+    transition: all 0.3s ease;
 }
 
-.form-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-salvar {
-    background: linear-gradient(to right, #3498db, #2ecc71) !important;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    flex: 1;
-}
-
-.btn-limpar {
-    background: #f1c40f !important;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    flex: 1;
-}
-
-.icon {
+.back-button::before {
+    content: "←";
     margin-right: 8px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(254, 180, 123, 0.6);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Estilos da Calculadora */
@@ -307,127 +290,122 @@ body {
     to { opacity: 0; }
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
-  padding: 20px;
-  margin: 0;
-  min-height: 100vh;
+/* Estilos do Formulário */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
 }
 
-.container {
-  max-width: 900px;
-  margin: 50px auto;
-  text-align: center;
-  perspective: 1000px;
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
-.container h1 {
-  font-size: 2.8rem;
-  color: #2c3e50;
-  margin-bottom: 40px;
-  position: relative;
-  padding-bottom: 15px;
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
-.container h1::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(to right, #4a7dff, #8e54e9);
-  border-radius: 2px;
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.project-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
+.btn-salvar {
+    background: linear-gradient(to right, #3498db, #2ecc71) !important;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.project-buttons button {
-  padding: 20px 15px;
-  background: linear-gradient(145deg, #4a7dff, #3a6de8);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 15px rgba(58, 109, 232, 0.3);
-  position: relative;
-  overflow: hidden;
-  transform: translateZ(0);
-  letter-spacing: 0.5px;
+.btn-limpar-form {
+    background: #f1c40f !important;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    flex: 1;
 }
 
-.project-buttons button::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.15);
-  transform: rotate(30deg);
-  transition: all 0.6s ease;
+.icon {
+    margin-right: 8px;
 }
 
-.project-buttons button:hover {
-  transform: translateY(-5px) translateZ(10px);
-  box-shadow: 0 12px 25px rgba(58, 109, 232, 0.4);
+/* Estilos do App de Frutas */
+.frutas-container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.project-buttons button:hover::after {
-  transform: rotate(30deg) translate(20%, 20%);
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.project-view {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  padding: 40px;
-  margin-top: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  animation: fadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+.input-group input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
 }
 
-.back-button {
-  display: inline-flex;
-  align-items: center;
-  margin: 30px auto 0;
-  padding: 14px 30px;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 16px;
-  box-shadow: 0 5px 15px rgba(254, 180, 123, 0.4);
-  transition: all 0.3s ease;
+.input-group button {
+    padding: 12px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.back-button::before {
-  content: "←";
-  margin-right: 8px;
-  font-weight: bold;
-  font-size: 18px;
+#listaFrutas {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    margin-bottom: 20px;
+    min-height: 30px;
 }
 
-.back-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(254, 180, 123, 0.6);
+.botoes-metodos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.botoes-metodos button {
+    padding: 12px;
+    background: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#saida {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: monospace;
+    min-height: 60px;
+    white-space: pre-wrap;
 }
